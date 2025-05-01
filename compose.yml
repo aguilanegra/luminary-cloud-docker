@@ -1,0 +1,13 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sdk-notebook
+    pull_policy: never
+    ports:
+      - "8888:8888"
+      - "10001:10001"
+    volumes:
+      - ./notebooks:/notebooks
+    container_name: luminarycloud-jupyter
